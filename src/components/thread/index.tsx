@@ -32,6 +32,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { Label } from "../ui/label";
 import { Switch } from "../ui/switch";
 import { GitHubSVG } from "../icons/github";
+import primedic_logo from "@/assets/p_logo.png";
 import {
   Tooltip,
   TooltipContent,
@@ -46,6 +47,7 @@ import {
   ArtifactTitle,
   useArtifactContext,
 } from "./artifact";
+import Image from "next/image";
 
 function StickyToBottomContent(props: {
   content: ReactNode;
@@ -331,7 +333,7 @@ export function Thread() {
             <div className="relative z-10 flex items-center justify-between gap-3 p-2">
               <div className="relative flex items-center justify-start gap-2">
                 <div className="absolute left-0 z-10">
-                  {(!chatHistoryOpen || !isLargeScreen) && (
+                  {/* {(!chatHistoryOpen || !isLargeScreen) && (
                     <Button
                       className="hover:bg-gray-100"
                       variant="ghost"
@@ -343,7 +345,7 @@ export function Thread() {
                         <PanelRightClose className="size-5" />
                       )}
                     </Button>
-                  )}
+                  )} */}
                 </div>
                 <motion.button
                   className="flex cursor-pointer items-center gap-2"
@@ -357,21 +359,23 @@ export function Thread() {
                     damping: 30,
                   }}
                 >
-                  <LangGraphLogoSVG
-                    width={32}
-                    height={32}
+                  <Image
+                    src={primedic_logo}
+                    alt="Primedic Salud"
+                    width={100}
+                    height={100}
                   />
-                  <span className="text-xl font-semibold tracking-tight">
-                    Agent Chat
-                  </span>
+                  {/* <span className="text-xl font-semibold tracking-tight">
+                    Primedic Salud
+                  </span> */}
                 </motion.button>
               </div>
 
               <div className="flex items-center gap-4">
                 <div className="flex items-center">
-                  <OpenGitHubRepo />
+                  {/* <OpenGitHubRepo /> */}
                 </div>
-                <TooltipIconButton
+                {/* <TooltipIconButton
                   size="lg"
                   className="p-4"
                   tooltip="New thread"
@@ -379,7 +383,7 @@ export function Thread() {
                   onClick={() => setThreadId(null)}
                 >
                   <SquarePen className="size-5" />
-                </TooltipIconButton>
+                </TooltipIconButton> */}
               </div>
 
               <div className="from-background to-background/0 absolute inset-x-0 top-full h-5 bg-gradient-to-b" />
@@ -476,14 +480,14 @@ export function Thread() {
                             form?.requestSubmit();
                           }
                         }}
-                        placeholder="Type your message..."
+                        placeholder="Escribe tu mensaje..."
                         className="field-sizing-content resize-none border-none bg-transparent p-3.5 pb-0 shadow-none ring-0 outline-none focus:ring-0 focus:outline-none"
                       />
 
                       <div className="flex items-center gap-6 p-2 pt-4">
                         <div>
                           <div className="flex items-center space-x-2">
-                            <Switch
+                            {/* <Switch
                               id="render-tool-calls"
                               checked={hideToolCalls ?? false}
                               onCheckedChange={setHideToolCalls}
@@ -493,10 +497,10 @@ export function Thread() {
                               className="text-sm text-gray-600"
                             >
                               Hide Tool Calls
-                            </Label>
+                            </Label> */}
                           </div>
                         </div>
-                        <Label
+                        {/* <Label
                           htmlFor="file-input"
                           className="flex cursor-pointer items-center gap-2"
                         >
@@ -512,7 +516,7 @@ export function Thread() {
                           multiple
                           accept="image/jpeg,image/png,image/gif,image/webp,application/pdf"
                           className="hidden"
-                        />
+                        /> */}
                         {stream.isLoading ? (
                           <Button
                             key="stop"
@@ -520,7 +524,7 @@ export function Thread() {
                             className="ml-auto"
                           >
                             <LoaderCircle className="h-4 w-4 animate-spin" />
-                            Cancel
+                            Cancelar
                           </Button>
                         ) : (
                           <Button
@@ -531,7 +535,7 @@ export function Thread() {
                               (!input.trim() && contentBlocks.length === 0)
                             }
                           >
-                            Send
+                            Enviar
                           </Button>
                         )}
                       </div>
