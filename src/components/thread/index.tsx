@@ -310,7 +310,7 @@ export function Thread() {
           {!chatStarted && (
             <div className="absolute top-0 left-0 z-10 flex w-full items-center justify-between gap-3 p-2 pl-4">
               <div>
-                {(!chatHistoryOpen || !isLargeScreen) && (
+                {/* {(!chatHistoryOpen || !isLargeScreen) && (
                   <Button
                     className="hover:bg-gray-100"
                     variant="ghost"
@@ -322,10 +322,10 @@ export function Thread() {
                       <PanelRightClose className="size-5" />
                     )}
                   </Button>
-                )}
+                )} */}
               </div>
               <div className="absolute top-2 right-4 flex items-center">
-                <OpenGitHubRepo />
+                {/* <OpenGitHubRepo /> */}
               </div>
             </div>
           )}
@@ -437,9 +437,14 @@ export function Thread() {
                 <div className="sticky bottom-0 flex flex-col items-center gap-8 bg-white">
                   {!chatStarted && (
                     <div className="flex items-center gap-3">
-                      <LangGraphLogoSVG className="h-8 flex-shrink-0" />
+                        <Image
+                    src={primedic_logo}
+                    alt="Primedic Salud"
+                    width={100}
+                    height={100}
+                  />
                       <h1 className="text-2xl font-semibold tracking-tight">
-                        Agent Chat
+                        Primedic Chat - Desarrollo
                       </h1>
                     </div>
                   )}
